@@ -1,24 +1,15 @@
 <?php
-require_once '../config/config.php';
+// require_once '../config/config.php';
 require '../vendor/autoload.php';
 
-use Aws\DynamoDb\DynamoDbClient;
-
-$dynamodb = new DynamoDbClient([
-    'region' => AWS_REGION,
-    'version' => 'latest',
-    'credentials' => [
-        'key' => AWS_ACCESS_KEY_ID,
-        'secret' => AWS_SECRET_ACCESS_KEY,
-    ],
-]);
+$dynamodb = $client;
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['key'])) {
     $key = $_GET['key'];
 
     try {
         $result = $dynamodb->getItem([
-            'TableName' => DYNAMODB_TABLE_NAME,
+            'TableName' => '' . $config['aws']['table_name'],
             'Key' => [
                 'testpartition' => ['S' => $key],
             ],

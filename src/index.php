@@ -5,11 +5,11 @@ require '../vendor/autoload.php';
 use Aws\DynamoDb\DynamoDbClient;
 
 $client = new DynamoDbClient([
-    'region' => $config['region'],
+    'region' => $config['aws']['region'],
     'version' => 'latest',
     'credentials' => [
-        'key' => $config['aws_access_key_id'],
-        'secret' => $config['aws_secret_access_key'],
+        'key' => $config['aws']['key'],
+        'secret' => $config['aws']['secret'],
     ],
 ]);
 
