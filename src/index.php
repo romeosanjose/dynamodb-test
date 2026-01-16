@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/../config/config.php';
+$config = require __DIR__ . '/../config/config.php';
 require '../vendor/autoload.php';
 
 use Aws\DynamoDb\DynamoDbClient;
