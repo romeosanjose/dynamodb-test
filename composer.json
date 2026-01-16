@@ -1,5 +1,6 @@
 {
-    "name": "php-dynamodb-app",
+    "name": "dynamodb-test/app",
+    "type": "project",
     "description": "A PHP application to read and write to AWS DynamoDB",
     "require": {
         "aws/aws-sdk-php": "^3.0"
