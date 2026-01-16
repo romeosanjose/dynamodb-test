@@ -1,5 +1,6 @@
 <?php
 require_once '../config/config.php';
+require '../vendor/autoload.php';
 
 use Aws\DynamoDb\DynamoDbClient;
 
