@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['key'])) {
         $result = $dynamodb->getItem([
             'TableName' => DYNAMODB_TABLE_NAME,
             'Key' => [
-                'YourPrimaryKey' => ['S' => $key],
+                'testpartition' => ['S' => $key],
             ],
         ]);
 

@@ -18,10 +18,10 @@ $dynamodb = new DynamoDbClient([
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);
     
-    if (isset($data['YourPrimaryKey']) && isset($data['OtherAttr'])) {
+    if (isset($data['testpartition']) && isset($data['is_active'])) {
         $item = [
-            'YourPrimaryKey' => ['S' => $data['YourPrimaryKey']],
-            'OtherAttr' => ['S' => $data['OtherAttr']],
+            'testpartition' => ['S' => $data['testpartition']],
+            'is_active' => ['BOOL' => $data['is_active']],
         ];
 
         try {
