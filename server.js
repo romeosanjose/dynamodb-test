@@ -3,6 +3,7 @@
 
 const express = require('express');
 const { NodeHttpHandler } = require("@aws-sdk/node-http-handler");
+const http = require("http");
 const { DynamoDBClient, GetItemCommand, PutItemCommand } = require('@aws-sdk/client-dynamodb');
 const bodyParser = require('body-parser');
 
