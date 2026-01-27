@@ -2,6 +2,7 @@
 // Simple Express HTTP API for DynamoDB read/write using AWS SDK v3
 
 const express = require('express');
+const { NodeHttpHandler } = require("@aws-sdk/node-http-handler");
 const { DynamoDBClient, GetItemCommand, PutItemCommand } = require('@aws-sdk/client-dynamodb');
 const bodyParser = require('body-parser');
 
