@@ -54,7 +54,10 @@ app.get('/read', async (req, res) => {
         },
     };
     try {
+        const start = Date.now();
         const data = await client.send(new GetItemCommand(params));
+        const end = Date.now();
+        console.log('DynamoDB latency:', end - start, 'ms');
         if (data.Item) {
             res.json(data.Item);
         } else {
